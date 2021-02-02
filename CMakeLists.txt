@@ -203,3 +203,10 @@ add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catk
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+catch_add_rostest_node(${PROJECT_NAME}_test test/test.cpp)
+target_link_libraries(${PROJECT_NAME}_test ${catkin_LIBRARIES})
+if(CATKIN_ENABLE_TESTING)
+    find_package(rostest REQUIRED)
+    add_rostest(test/mytest.test)
+endif()

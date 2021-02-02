@@ -1,0 +1,4 @@
+<launch>
+ <node name="echo_node" pkg="testtest" type="node" output="screen"/>
+  <test test-name="test" pkg="testtest" type="testtest_test" time-limit="5.0" />
+</launch>
